@@ -6,9 +6,15 @@ Library for common CrossRef-related tasks, written in Clojure.
 
 With Leiningen:
 
-    [crossref-util "0.1.2"]
+    [crossref-util "0.1.3"]
     
 ## Usage
+
+### Auth
+
+Authenticate CrossRef member credentials. Returns success and list of DOI prefixes the user is allowed to administrate. Currently has a FIXME because the SSL certificate doesn't appear to be in the standard JVM key store.
+
+ - `authenticate` - pass in CrossRef username and password to authenticate.
 
 ### Config
 
