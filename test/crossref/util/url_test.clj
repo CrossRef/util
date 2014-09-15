@@ -1,6 +1,6 @@
-(ns util.url-test
+(ns crossref.util.url-test
   (:require [clojure.test :refer :all]
-            [util.url :refer :all]))
+            [crossref.util.url :refer :all]))
 
 (deftest test-ensure-scheme
   (testing "ensure-scheme works")

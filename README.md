@@ -2,6 +2,13 @@
 
 Library for common CrossRef-related tasks, written in Clojure.
 
+## Installation
+
+With Leiningen:
+
+    [crossref-util "0.1.2"]
+    
+## Usage
 
 ### Config
 

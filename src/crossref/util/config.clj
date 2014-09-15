@@ -1,4 +1,4 @@
-(ns util.config
+(ns crossref.util.config
     (:require [clojure.tools.reader.edn :as edn])    
     (:require [clojure.tools.logging :refer [info error]]))
   

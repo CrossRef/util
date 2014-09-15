@@ -1,4 +1,4 @@
-(ns util.url)
+(ns crossref.util.url)
 
 (defn http-scheme? [url]
   (or (.startsWith url "http://")

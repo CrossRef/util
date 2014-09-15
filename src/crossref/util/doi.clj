@@ -1,5 +1,5 @@
-(ns util.doi
-  (:require [util.string :refer [add-leading remove-leading]]))
+(ns crossref.util.doi
+  (:require [crossref.util.string :refer [add-leading remove-leading]]))
 
 (def dx-doi-url "http://dx.doi.org/")
 (def doi-scheme "doi:")

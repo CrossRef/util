@@ -1,6 +1,6 @@
-(ns util.doi-test
+(ns crossref.util.doi-test
   (:require [clojure.test :refer :all]
-            [util.doi :refer :all]))
+            [crossref.util.doi :refer :all]))
 
 (deftest test-doi
   (testing "Normalise works")

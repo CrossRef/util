@@ -1,4 +1,4 @@
-(ns util.string)
+(ns crossref.util.string)
 
 (defn remove-leading [prefix string]
   (if (.startsWith string prefix)

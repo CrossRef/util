@@ -1,8 +1,8 @@
-(ns util.date-test
+(ns crossref.util.date-test
   (:require [clojure.test :refer :all]
             [clj-time.core :as clj-time]
             [clj-time.format :as clj-time-format]
-            [util.date :as crd]))
+            [crossref.util.date :as crd]))
 
 (deftest date
   (testing "Seasons in order")
