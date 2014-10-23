@@ -18,7 +18,7 @@ Authenticate CrossRef member credentials. Returns success and list of DOI prefix
 
 ### Config
 
-Simple config file reader.
+Simple config file reader. Usage: `(:require [crossref.util.config :refer [config]])`. `config` will be a hashmap of config values.
 
  - `config` - configuration read from `config.edn` (falling back to `config.dev.edn`)
 

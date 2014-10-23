@@ -46,6 +46,8 @@
   
   (is (= (crd/crossref-date 2010 crd/second-quarter) (clj-time/date-time 2010 4 01))))
 
+
+
 (deftest pretty-printing
   (testing "Dates can be printed with the accuracy and inputs they were constructed with")
   
@@ -73,4 +75,15 @@
   
   (testing "Special dates that look like ISO8601 can be parsed."
   (is (= (clj-time-format/parse "2014-03-01") (crd/parse "2014-21-01"))
-      "Spring equates to first day of spring")))
+      "Spring equates to first day of spring"))
+  
+  (testing "Dates with slashes can be parsed"
+  (is (= (clj-time-format/parse "1066-10-14") (crd/parse "1066/10/14"))))
+
+  (testing "Partial dates can be parsed"
+    (is (= (crd/parse "2014") (crd/crossref-date 2014)))
+    (is (= (crd/parse "2014/10") (crd/crossref-date 2014 10)))
+    (is (= (crd/parse "2014/10/14") (crd/crossref-date 2014 10 14)))
+    (is (= (crd/parse "2014") (crd/crossref-date 2014)))
+    (is (= (crd/parse "2014-10") (crd/crossref-date 2014 10)))
+    (is (= (crd/parse "2014-10-14") (crd/crossref-date 2014 10 14)))))

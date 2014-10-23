@@ -127,8 +127,11 @@
     ; nil on error
     (if parsed
       (crossref-date (clj-time/year parsed) (clj-time/month parsed) (clj-time/day parsed)))
-      (let [parts (.split input "-")
-            year (Integer/parseInt (first parts))
-            month (Integer/parseInt (second parts))
-            day (Integer/parseInt (get parts 2))]
-        (crossref-date year month day))))
+      (let [parts (.split input "-|/")
+            int-parts (map #(Integer/parseInt %) parts)]
+        (condp = (count parts)
+          1 (apply crossref-date int-parts)
+          2 (apply crossref-date int-parts)
+          3 (apply crossref-date int-parts)
+          ; Fail with nil.
+          nil))))
