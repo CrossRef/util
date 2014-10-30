@@ -1,4 +1,4 @@
-(defproject crossref-util "0.1.5"
+(defproject crossref-util "0.1.6"
   :description "CrossRef Utils"
   :url "http://github.com/crossref/util"
   :license {:name "Eclipse Public License"

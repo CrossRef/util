@@ -6,7 +6,7 @@ Library for common CrossRef-related tasks, written in Clojure.
 
 With Leiningen:
 
-    [crossref-util "0.1.5"]
+    [crossref-util "0.1.6"]
     
 ## Usage
 
@@ -36,7 +36,8 @@ CrossRef dates aren't ISO dates. The [CrossRef Deposit Schema](http://www.crossr
 A couple of functions for validating and normalizing [DOIs](http://www.crossref.org/02publishers/doi_display_guidelines.html).
 
  - `normalise-doi` Convert a DOI to comply with CrossRef display guidelines.
- - `non-url-doi` Convert a DOI to remove leading scheme
+ - `non-url-doi` Convert a DOI to remove leading scheme.
+ - `get-prefix` Extract the prefix from a DOI.
 
 ### String
 
