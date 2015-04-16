@@ -79,7 +79,7 @@
     (is (not (well-formed "/12345678")))
     (is (not (well-formed "123456789"))))
   
-  (testing "non-doi-prefix is not well formed"
+  (testing "directory code must be 10"
     (is (not (well-formed "11.5555/12345678")))
     (is (not (well-formed "dx.doi.org/11.5555/12345678"))))
   
@@ -90,7 +90,7 @@
     (is (well-formed "https://dx.doi.org/10.5555/12345678"))
     (is (well-formed "doi:10.5555/12345678")))
   
-  (testing "DOI with non-numerical prefix is well-formed"  
+  (testing "DOI with non-numerical registrant code in prefix is well-formed"  
     (is (well-formed "10.ABCDEFG/12345678")))
   
   (testing "Examples from ANSI/NISO Z39.84-2000 are well-formed"  
@@ -103,6 +103,6 @@
     ; Appendix E
     (is (well-formed "http://dx.doi.org/10.1006/rwei.1999.0001")))
   
-  (testing "DOI suffix can't start with «single-character»/ (Z39.84-2000 §4.3)"
+  (testing "DOI suffix can't start with '«single-character»/' (Z39.84-2000 §4.3)"
     (is (not (well-formed "10.5555/1/2345678"))
     (is (not (well-formed "dx.doi.org/10.5555/1/2345678"))))))
