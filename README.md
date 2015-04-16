@@ -6,7 +6,7 @@ Library for common CrossRef-related tasks, written in Clojure.
 
 With Leiningen:
 
-    [crossref-util "0.1.7"]
+    [crossref-util "0.1.8"]
     
 ## Usage
 
@@ -38,6 +38,8 @@ A couple of functions for validating and normalizing [DOIs](http://www.crossref.
  - `normalise-doi` Convert a DOI to comply with CrossRef display guidelines.
  - `non-url-doi` Convert a DOI to remove leading scheme.
  - `get-prefix` Extract the prefix from a DOI.
+ - `get-suffix` Extract the suffix from a DOI.
+ - `well-formed` Is the DOI well-formed according to ANSI/NISO Z39.84-2000? NB this may be broader than CrossRef-accepted DOIs.
 
 ### String
 
