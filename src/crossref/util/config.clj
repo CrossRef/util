@@ -1,5 +1,5 @@
 (ns crossref.util.config
-    (:require [clojure.tools.reader.edn :as edn])    
+    (:require [clojure.edn :as edn])    
     (:require [clojure.tools.logging :refer [info error]]))
   
 ; List of files to try opening, in order.
