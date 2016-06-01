@@ -3,20 +3,20 @@
             [crossref.util.doi :refer :all]))
 
 (deftest test-doi
-  (testing "Normalise works"
-  (is (= "http://dx.doi.org/10.5555/12345678" (normalise-doi "10.5555/12345678"))
+  (testing "Normalise works, using doi.org and https"
+  (is (= "https://doi.org/10.5555/12345678" (normalise-doi "10.5555/12345678"))
       "Fixes un-normalised DOIs.")
-  (is (= "http://dx.doi.org/10.5555/12345678" (normalise-doi "doi:10.5555/12345678"))
+  (is (= "https://doi.org/10.5555/12345678" (normalise-doi "doi:10.5555/12345678"))
       "Fixes un-normalised DOIs with doi: scheme.")
-  (is (= "http://dx.doi.org/10.5555/12345678" (normalise-doi "https://dx.doi.org/10.5555/12345678"))
+  (is (= "https://doi.org/10.5555/12345678" (normalise-doi "https://dx.doi.org/10.5555/12345678"))
       "Normalizes HTTPS to HTTP")
-  (is (= "http://dx.doi.org/10.5555/12345678" (normalise-doi "https://dx.doi.org/10.5555/12345678"))
+  (is (= "https://doi.org/10.5555/12345678" (normalise-doi "https://dx.doi.org/10.5555/12345678"))
       "Normalizes HTTPS to HTTP")
-  (is (= "http://dx.doi.org/10.5555/12345678" (normalise-doi "http://doi.org/10.5555/12345678"))
+  (is (= "https://doi.org/10.5555/12345678" (normalise-doi "http://doi.org/10.5555/12345678"))
       "Normalizes doi.org to dx.doi.org")
-  (is (= "http://dx.doi.org/10.5555/12345678" (normalise-doi "http://dx.doi.org/10.5555/12345678"))
+  (is (= "https://doi.org/10.5555/12345678" (normalise-doi "http://dx.doi.org/10.5555/12345678"))
       "Preserves normalised DOIs"))
-  (is (= "http://dx.doi.org/10.5555/abc12345678"
+  (is (= "https://doi.org/10.5555/abc12345678"
          (normalise-doi "10.5555/AbC12345678")
          (normalise-doi "10.5555/aBc12345678"))
     "Normalizes case"))

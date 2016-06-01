@@ -2,7 +2,7 @@
   (:require [crossref.util.string :refer [add-leading remove-leading]])
   (:require [clojure.string]))
 
-(def dx-doi-url "http://dx.doi.org/")
+(def dx-doi-url "https://doi.org/")
 
 (defn non-url-doi
   "Convert DOI into non-URL format."
