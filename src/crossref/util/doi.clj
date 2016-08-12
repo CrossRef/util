@@ -2,7 +2,7 @@
   (:require [crossref.util.string :refer [add-leading remove-leading]])
   (:require [clojure.string]))
 
-(def dx-doi-url "https://doi.org/")
+(def resolver "https://doi.org/")
 
 (defn non-url-doi
   "Convert DOI into non-URL format."
@@ -10,12 +10,12 @@
   (let [to-drop ["http://" "https://" "dx.doi.org/" "doi.org/" "doi:"]
         ; Remove prefixes one by one
         without-prefixes (reduce (fn [v prefix] (if (.startsWith v prefix) (.substring v (count prefix)) v)) doi to-drop)]
-    (.toLowerCase without-prefixes)))
+    (.toUpperCase without-prefixes)))
 
 (defn normalise-doi
   "Convert DOIs into canonical format (with a URL)."
   [doi]
-  (add-leading dx-doi-url (non-url-doi doi)))
+  (add-leading resolver (non-url-doi doi)))
 
 (defn get-prefix [doi]
   (let [split (.split (non-url-doi doi) "/")]   
