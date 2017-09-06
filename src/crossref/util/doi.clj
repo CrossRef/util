@@ -46,5 +46,5 @@
           long-enough-suffix (not (clojure.string/blank? suffix))
           
           ; § 4.3
-          valid-suffix (and suffix (not (re-find #"./" suffix)))]      
+          valid-suffix (and suffix (not (re-find #"^./" suffix)))]      
       (and valid-directory-code valid-registrant-code long-enough-suffix valid-suffix))))

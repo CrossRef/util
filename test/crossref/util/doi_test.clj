@@ -106,3 +106,7 @@
   (testing "DOI suffix can't start with '«single-character»/' (Z39.84-2000 §4.3)"
     (is (not (well-formed "10.5555/1/2345678"))
     (is (not (well-formed "dx.doi.org/10.5555/1/2345678"))))))
+
+(deftest regression-tests
+  (testing "Slash in suffix doesn't confuse well-formed"
+    (is (well-formed "10.17159/sajs.2017/a0196"))))
