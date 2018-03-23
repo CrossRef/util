@@ -6,7 +6,7 @@ Library for common CrossRef-related tasks, written in Clojure.
 
 With Leiningen:
 
-    [crossref-util "0.1.9"]
+    [crossref-util "0.1.15"]
     
 ## Usage
 

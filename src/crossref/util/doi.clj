@@ -10,7 +10,7 @@
   (let [to-drop ["http://" "https://" "dx.doi.org/" "doi.org/" "doi:"]
         ; Remove prefixes one by one
         without-prefixes (reduce (fn [v prefix] (if (.startsWith v prefix) (.substring v (count prefix)) v)) doi to-drop)]
-    (.toUpperCase without-prefixes)))
+    without-prefixes))
 
 (defn normalise-doi
   "Convert DOIs into canonical format (with a URL)."

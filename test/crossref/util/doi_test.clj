@@ -15,11 +15,7 @@
   (is (= "https://doi.org/10.5555/12345678" (normalise-doi "http://doi.org/10.5555/12345678"))
       "Normalizes doi.org to dx.doi.org")
   (is (= "https://doi.org/10.5555/12345678" (normalise-doi "http://dx.doi.org/10.5555/12345678"))
-      "Preserves normalised DOIs"))
-  (is (= "https://doi.org/10.5555/ABC12345678"
-         (normalise-doi "10.5555/AbC12345678")
-         (normalise-doi "10.5555/aBc12345678"))
-    "Normalizes case"))
+      "Preserves normalised DOIs")))
 
 (deftest test-non-url-doi
   (testing "Non-URL normalize works"
@@ -33,10 +29,6 @@
       "Fixes HTTPS URLed DOIs")
   (is (= "10.5555/12345678" (non-url-doi "http://doi.org/10.5555/12345678"))
       "Fixes URLs for doi.org proxy")
-  (is (= "10.5555/ABCDEF123"
-         (non-url-doi "http://doi.org/10.5555/ABCdef123")
-         (non-url-doi "http://doi.org/10.5555/AbCdEf123"))
-      "Normalizes case")
   (is (= "10.5555/12345678" (non-url-doi "doi:10.5555/12345678"))
       "Fixes DOI schema")))
 
